@@ -7,8 +7,8 @@ VehicalNo VARCHAR(17) CONSTRAINT Customer_VehicalNo_NotNull NOT NULL,
 PhoneNumber NUMERIC(10) CONSTRAINT Customer_phonenumber_NotNull_Chk CHECK (PhoneNumber BETWEEN 1000000000 AND 9999999999), 
 EmailId VARCHAR(30) CONSTRAINT Customer_Email_Chk CHECK (EmailId LIKE '[a-z,0-9,_,-]%@[a-z]%.[a-z][a-z]%'),
 [Address] VARCHAR(100) CONSTRAINT Customer_Address_NotNull NOT NULL,
-CityId VARCHAR(25) CONSTRAINT Customer_City_FK_NotNull NOT NULL FOREIGN KEY REFERENCES City(CityID) ON DELETE NO ACTION ON UPDATE NO ACTION,
-StateId VARCHAR(25) CONSTRAINT Customer_City_FK_NotNull NOT NULL FOREIGN KEY REFERENCES State(StateID) ON DELETE NO ACTION ON UPDATE NO ACTION
+CityId INT CONSTRAINT Customer_City_FK_NotNull NOT NULL FOREIGN KEY REFERENCES City(CityID) ON DELETE NO ACTION ON UPDATE NO ACTION,
+StateId INT CONSTRAINT Customer_City_FK_NotNull NOT NULL FOREIGN KEY REFERENCES State(StateID) ON DELETE NO ACTION ON UPDATE NO ACTION
 )
 
  
@@ -155,3 +155,25 @@ INSERT INTO [Session] (CustomerID,PortID,StartTime,EndTime,AmountToPay,PaymentMo
 (3,22,'08/14/2021 12:00','08/14/2021 13:30',110,'Account Vollet'),
 (4,14,'08/27/2021 07:30','08/27/2021 08:30',80,'Cash')
 
+INSERT INTO City VALUES
+('Ahmedabad'),
+('Baroda'),
+('Surat'),
+('Rajkot'),
+('Jamnagar'),
+('Gandhinagar'),
+('Mumbai'),
+('New Delhi'),
+('Kalkata'),
+('Chennai'),
+('Pune'),
+('Bengaluru'),
+('Mysore'),
+('Bhopal'),
+('Indore'),
+('Amritsar'),
+('Jalandhar'),
+('Chandigarh'),
+('Jaypur'),
+('Jaisalmer'),
+('Jodhpur')
