@@ -105,39 +105,39 @@ INSERT INTO Customer VALUES
 
 
 INSERT INTO  ChargingStation VALUES
-('KKV','ANIL','KKV ROAD','RAJKOT','GUJARAT',4,4),
-('C2','SHREYASH','RING ROAD','JAMNAGER','GUJARAT',4,4),
-('NOVA','Nikhil','CLUB ROAD','AHEMDABAD','GUJARAT',6,4),
-('MG','Vikas','raiya road','RAJKOT','GUJARAT',4,2),
-('TATA','Raj','university road','JAMNAGER','GUJARAT',5,2)
-
+('KKV','ANIL','KKV ROAD',4,8),
+('C2','SHREYASH','RING ROAD',3,8),
+('NOVA','Nikhil','CLUB ROAD',2,8),
+('MG','Vikas','raiya road',4,8),
+('TATA','Raj','university road',1,8)
  
 
+
 INSERT INTO Port VALUES
-(1,260,'CHAdeMO','YES',8.4),
-(1,260,'CHAdeMO','YES',8.4),
-(1,260,'CHAdeMO','YES',8.4),
-(1,240,'CCS-2','YES',9),
-(2,240,'CCS-2','YES',9),
-(2,240,'CCS-2','YES',9),
-(2,240,'CHAdeMO','YES',8.5),
-(2,260,'CHAdeMO','YES',8.4),
-(3,240,'CCS-2','YES',9),
-(3,240,'CCS-2','YES',9),
-(3,240,'CCS-2','YES',9),
-(3,240,'CHAdeMO','YES',8.5),
-(3,260,'CHAdeMO','NO',8.4),
-(3,240,'AC TYPE-1','NO',7.2),
-(4,240,'CCS-2','YES',9),
-(4,240,'CCS-2','NO',9),
-(4,240,'CHAdeMO','NO',8.5),
-(4,260,'CHAdeMO','YES',8.4),
-(5,240,'CCS-2','YES',9),
-(5,240,'CCS-2','YES',9),
-(5,240,'CCS-2','NO',9),
-(5,240,'CHAdeMO','YES',8.5),
-(5,260,'CHAdeMO','NO',8.4),
-(5,240,'AC TYPE-1','NO',7.2)
+(1,260,5,1,8.4),
+(1,260,5,1,8.4),
+(1,260,5,1,8.4),
+(1,240,2,1,9),
+(2,240,2,1,9),
+(2,240,2,1,9),
+(2,240,5,1,8.5),
+(2,260,5,1,8.4),
+(3,240,2,1,9),
+(3,240,2,1,9),
+(3,240,2,1,9),
+(3,240,5,1,8.5),
+(3,260,5,0,8.4),
+(3,240,9,0,7.2),
+(4,240,2,1,9),
+(4,240,2,0,9),
+(4,240,5,0,8.5),
+(4,260,5,1,8.4),
+(5,240,2,1,9),
+(5,240,2,1,9),
+(5,240,2,0,9),
+(5,240,5,1,8.5),
+(5,260,5,0,8.4),
+(5,240,9,0,7.2)
 
 INSERT INTO  Employees
 VALUES(1,'Virat',9824685963,22000),
@@ -209,4 +209,17 @@ VALUES('Andhra Pradesh'),
 	  ('Uttar Pradesh'),
 	  ('Uttarakhand'),
 	  ('West Bengal')
+	  
+	  
+	  INSERT INTO Connection_Type VALUES
+		('CCS-1'),
+		('CCS-2'),
+		('BG/T'),
+		('Tesla Charger'),
+		('CHAdeMO'),
+		('GB/T'),
+		('AC TYPE-1'),
+		('AC TYPE-2'),
+		('AC0001'),
+		('AC PLUG POINT')
     
