@@ -95,11 +95,11 @@ Comment VARCHAR(500)
 )
 
 INSERT INTO Customer VALUES
-('Harsh','CCS-1','WBA3X5C51ED235114',9998885555,'abcs222@gmail.com','Virat Nagar','Banglore',2500),
-('Jaydeep','CCS-2','5N3AA08A95N863813',8988956234,'csdv55@gmail.com','M.G. Road','Ahmedabad',10000),
-('Kevin','CHAdeMO','19XFA1F56BE004421',8787874555,'sdddd455@gmail.com','Market Road', 'Mumbai',1520),
-('Rohit','CCS-2','2MEFM74V87X658365',9879875654,'ughgdf33@gmail.com','S.G. Highway','Ahmedabad',2235),
-('John','CHAdeMO','4T1BD1FK7FU102405',7878956520,'gfydhg222@gmail.com','Hospital Road','Delhi',5623)
+('Harsh','CCS-1','WBA3X5C51ED235114',9998885555,'abcs222@gmail.com','Virat Nagar',12,12),
+('Jaydeep','CCS-2','5N3AA08A95N863813',8988956234,'csdv55@gmail.com','M.G. Road',1,8),
+('Kevin','CHAdeMO','19XFA1F56BE004421',8787874555,'sdddd455@gmail.com','Market Road',7 ,15),
+('Rohit','CCS-2','2MEFM74V87X658365',9879875654,'ughgdf33@gmail.com','S.G. Highway',1,8),
+('John','CHAdeMO','4T1BD1FK7FU102405',7878956520,'gfydhg222@gmail.com','Hospital Road',3,8)
 
  
 
