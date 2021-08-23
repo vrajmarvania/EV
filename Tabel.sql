@@ -178,3 +178,35 @@ INSERT INTO City VALUES
 ('Jodhpur')
 
 INSERT INTO PaymentMode VALUES ('Credit Card'),('Debit Card'),('Net Banking'),('PayTM'),('UPI'),('Cash')
+
+
+INSERT INTO  State
+VALUES('Andhra Pradesh'),
+      ('Arunachal Pradesh'),
+	  ('Assam'),
+	  ('Bihar'),
+	  ('Chhattisgarh'),
+	  ('Delhi'),
+	  ('Goa'),
+	  ('Gujrat'),
+	  ('Haryana'),
+	  ('Himachal Pradesh'),
+	  ('Jharkhand'),
+	  ('Karnataka'),
+	  ('Kerala'),
+	  ('Madhya Pradesh'),
+	  ('Maharashtra'),
+	  ('Manipur'),
+	  ('Meghalaya'),
+	  ('Mizoram'),
+	  ('Nagaland'),
+	  ('Odisha'),
+	  ('Punjab'),
+	  ('Rajasthan'),
+	  ('sikkim'),
+	  ('Tamil Nadu'),
+	  ('Tripura'),
+	  ('Uttar Pradesh'),
+	  ('Uttarakhand'),
+	  ('West Bengal')
+    
