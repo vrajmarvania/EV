@@ -105,6 +105,12 @@ INSERT INTO Port VALUES
 (5,260,'CHAdeMO','NO',8.4),
 (5,240,'AC TYPE-1','NO',7.2)
 
+INSERT INTO  Employees
+VALUES(1,'Virat',9824685963,22000),
+    (2,'Umesh',8564293846,20000),
+    (3,'Chirag',9654821563,25000),
+    (4,'Hardik',9265861573,23000),
+    (5,'Ravi',8320046042,24000)
  
 
 INSERT INTO [Session] (CustomerID,PortID,StartTime,EndTime,AmountToPay,PaymentMode) VALUES
