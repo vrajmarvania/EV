@@ -76,6 +76,14 @@ create table State
   [Name] VARCHAR (50) CONSTRAINT State_Name_NotNull NOT NULL
 )
 
+CREATE TABLE Connection_Type	
+(
+TypeID	INT CONSTRAINT  Connection_TypeID_PkAuto PRIMARY KEY IDENTITY(1,1),
+Type VARCHAR(30) CONSTRAINT Connection_Type_NotNull NOT NULL
+)
+
+
+
 
 INSERT INTO Customer VALUES
 ('Harsh','CCS-1','WBA3X5C51ED235114',9998885555,'abcs222@gmail.com','Virat Nagar','Banglore',2500),
