@@ -176,3 +176,5 @@ INSERT INTO City VALUES
 ('Jaypur'),
 ('Jaisalmer'),
 ('Jodhpur')
+
+INSERT INTO PaymentMode VALUES ('Credit Card'),('Debit Card'),('Net Banking'),('PayTM'),('UPI'),('Cash')
