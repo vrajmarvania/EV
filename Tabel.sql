@@ -7,8 +7,8 @@ VehicalNo VARCHAR(17) CONSTRAINT Customer_VehicalNo_NotNull NOT NULL,
 PhoneNumber NUMERIC(10) CONSTRAINT Customer_phonenumber_NotNull_Chk CHECK (PhoneNumber BETWEEN 1000000000 AND 9999999999), 
 EmailId VARCHAR(30) CONSTRAINT Customer_Email_Chk CHECK (EmailId LIKE '[a-z,0-9,_,-]%@[a-z]%.[a-z][a-z]%'),
 [Address] VARCHAR(100) CONSTRAINT Customer_Address_NotNull NOT NULL,
-City VARCHAR(10) CONSTRAINT Customer_City_NotNull NOT NULL,
-Balance Money CONSTRAINT Customer_Balance_NotNull NOT NULL
+CityId VARCHAR(25) CONSTRAINT Customer_City_FK_NotNull NOT NULL FOREIGN KEY REFERENCES City(CityID) ON DELETE NO ACTION ON UPDATE NO ACTION,
+StateId VARCHAR(25) CONSTRAINT Customer_City_FK_NotNull NOT NULL FOREIGN KEY REFERENCES Station(StationID) ON DELETE NO ACTION ON UPDATE NO ACTION
 )
 
  
@@ -19,8 +19,8 @@ StationID INT CONSTRAINT ChargingStation_StationID_PkAuto PRIMARY KEY IDENTITY(1
 StationName VARCHAR(50) CONSTRAINT ChargingStation_StationName_NotNull NOT NULL,
 [Owner] VARCHAR (50) CONSTRAINT ChargingStation_Owner_NotNull NOT NULL,
 [Address] VARCHAR (100) CONSTRAINT ChargingStation_Address_NotNull NOT NULL,
-City VARCHAR (25) CONSTRAINT ChargingStation_City_NotNull NOT NULL,
-[State] VARCHAR (25) CONSTRAINT ChargingStation_State_NotNull NOT NULL,
+CityID VARCHAR (25) CONSTRAINT ChargingStation_City_FK_NotNull NOT NULL FOREIGN KEY REFERENCES City(CityID) ON DELETE NO ACTION ON UPDATE NO ACTION,
+StateID VARCHAR (25) CONSTRAINT ChargingStation_State_FK_NotNull NOT NULL FOREIGN KEY REFERENCES State(StateID) ON DELETE NO ACTION ON UPDATE NO ACTION,
 TotalPorts     SMALLINT CONSTRAINT ChargingStation_TotalPorts_NotNull NOT NULL,
 AvailablePorts SMALLINT CONSTRAINT ChargingStation_AvailableSlots_NotNull NOT NULL,
 )
@@ -69,11 +69,16 @@ Mode VARCHAR(20) CONSTRAINT PaymentMode_Mode_NotNull NOT NULL
 )
 
 
-
 create table State 
 (
   StateID INT  CONSTRAINT  State_StateID_PkAuto PRIMARY KEY IDENTITY(1,1),
   [Name] VARCHAR (50) CONSTRAINT State_Name_NotNull NOT NULL
+)
+
+CREATE TABLE City
+(
+	CityID INT CONSTRAINT City_CityID_Pk PRIMARY KEY IDENTITY(1,1),
+	CityName VARCHAR(25)
 )
 
 
