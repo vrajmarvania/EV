@@ -22,17 +22,16 @@ StationName VARCHAR(50) CONSTRAINT ChargingStation_StationName_NotNull NOT NULL,
 CityID VARCHAR (25) CONSTRAINT ChargingStation_City_FK_NotNull NOT NULL FOREIGN KEY REFERENCES City(CityID) ON DELETE NO ACTION ON UPDATE NO ACTION,
 StateID VARCHAR (25) CONSTRAINT ChargingStation_State_FK_NotNull NOT NULL FOREIGN KEY REFERENCES State(StateID) ON DELETE NO ACTION ON UPDATE NO ACTION,
 TotalPorts     SMALLINT CONSTRAINT ChargingStation_TotalPorts_NotNull NOT NULL,
-AvailablePorts SMALLINT CONSTRAINT ChargingStation_AvailableSlots_NotNull NOT NULL,
-)
+)        
         
-CREATE TABLE [Port]
+CREATE TABLE [Port]   
 (
-PortID INT CONSTRAINT Port_PortID_PkAuto PRIMARY KEY IDENTITY(1,1) ,
-StationId INT CONSTRAINT Port_StationId_Fk FOREIGN KEY REFERENCES ChargingStation(StationID) ON DELETE SET NULL ON UPDATE CASCADE,
-Port_Voltage DECIMAL(6,3) CONSTRAINT Port_Voltage_NotNull NOT NULL,
-Connection_Type VARCHAR(20) CONSTRAINT Port_Connection_Type_Chk CHECK (Connection_Type IN ('CCS-1','CCS-2','BG/T','Tesla Charger','CHAdeMO','GB/T','AC TYPE-1','AC TYPE-2','AC0001','AC PLUG POINT')) NOT NULL,
-[Availability] VARCHAR(5) CONSTRAINT Port_Availability_Chk CHECK (Availability IN ('YES','NO')) NOT NULL,
-[Chargesper_kwh(Unit)] MONEY  CONSTRAINT Port_Chargesper_kwh_NotNull NOT NULL,
+PortID    INT CONSTRAINT Port_PortID_PkAuto PRIMARY KEY IDENTITY(1,1) ,
+StationId INT CONSTRAINT Port_StationId_Fk FOREIGN KEY REFERENCES ChargingStation(StationID) ON DELETE NO ACTION ON UPDATE CASCADE NOT NULL,
+Port_Voltage DECIMAL(6,3)  CONSTRAINT Port_Voltage_NotNull NOT NULL,
+TypeID VARCHAR (25) CONSTRAINT Connection_Type_Fk_NotNull FOREIGN KEY REFERENCES State(TypeID) ON DELETE NO ACTION ON UPDATE CASCADE NOT NULL,
+[Availability]  BIT  CONSTRAINT Port_Availability_Chk   NOT NULL,
+[Chargesper_kwh(Unit)]    MONEY  CONSTRAINT Port_Chargesper_kwh_NotNull NOT NULL,
 )
 
  
