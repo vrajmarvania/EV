@@ -2,7 +2,7 @@ CREATE TABLE Customer
 (
 CustomerID INT CONSTRAINT Customer_CustomerID_PkAuto PRIMARY KEY IDENTITY(1,1),
 [Name] VARCHAR (50) CONSTRAINT Customer_NameNull_NotNull NOT NULL,
-TypeID INT CONSTRAINT Customer_ConnectionType_FK_NotNull NOT NULL FOREIGN KEY REFERENCES Connection_Type(TypeID) ON DELETE NO ACTION ON UPDATE NO ACTION, 
+ConnectionID INT CONSTRAINT Customer_ConnectionType_FK_NotNull NOT NULL FOREIGN KEY REFERENCES Connection_Type(TypeID) ON DELETE NO ACTION ON UPDATE NO ACTION, 
 VehicalNo VARCHAR(17) CONSTRAINT Customer_VehicalNo_NotNull NOT NULL, 
 PhoneNumber NUMERIC(10) CONSTRAINT Customer_phonenumber_NotNull_Chk CHECK (PhoneNumber BETWEEN 1000000000 AND 9999999999), 
 EmailId VARCHAR(30) CONSTRAINT Customer_Email_Chk CHECK (EmailId LIKE '[a-z,0-9,_,-]%@[a-z]%.[a-z][a-z]%'),
