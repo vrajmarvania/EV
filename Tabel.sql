@@ -2,7 +2,7 @@ CREATE TABLE Customer
 (
 CustomerID INT CONSTRAINT Customer_CustomerID_PkAuto PRIMARY KEY IDENTITY(1,1),
 [Name] VARCHAR (50) CONSTRAINT Customer_NameNull_NotNull NOT NULL,
-ConnectionType VARCHAR(15) CONSTRAINT Customer_ConnectionType_Chk CHECK (ConnectionType IN ('CCS-1','CCS-2','BG/T','Tesla Charger','CHAdeMO','GB/T','AC TYPE-1','AC TYPE-2','AC0001','AC PLUG POINT')),
+TypeID INT CONSTRAINT Customer_ConnectionType_FK_NotNull NOT NULL FOREIGN KEY REFERENCES Connection_Type(TypeID) ON DELETE NO ACTION ON UPDATE NO ACTION, 
 VehicalNo VARCHAR(17) CONSTRAINT Customer_VehicalNo_NotNull NOT NULL, 
 PhoneNumber NUMERIC(10) CONSTRAINT Customer_phonenumber_NotNull_Chk CHECK (PhoneNumber BETWEEN 1000000000 AND 9999999999), 
 EmailId VARCHAR(30) CONSTRAINT Customer_Email_Chk CHECK (EmailId LIKE '[a-z,0-9,_,-]%@[a-z]%.[a-z][a-z]%'),
@@ -95,11 +95,11 @@ Comment VARCHAR(500)
 )
 
 INSERT INTO Customer VALUES
-('Harsh','CCS-1','WBA3X5C51ED235114',9998885555,'abcs222@gmail.com','Virat Nagar',12,12),
-('Jaydeep','CCS-2','5N3AA08A95N863813',8988956234,'csdv55@gmail.com','M.G. Road',1,8),
-('Kevin','CHAdeMO','19XFA1F56BE004421',8787874555,'sdddd455@gmail.com','Market Road',7 ,15),
-('Rohit','CCS-2','2MEFM74V87X658365',9879875654,'ughgdf33@gmail.com','S.G. Highway',1,8),
-('John','CHAdeMO','4T1BD1FK7FU102405',7878956520,'gfydhg222@gmail.com','Hospital Road',3,8)
+('Harsh',1,'WBA3X5C51ED235114',9998885555,'abcs222@gmail.com','Virat Nagar',12,12),
+('Jaydeep',2,'5N3AA08A95N863813',8988956234,'csdv55@gmail.com','M.G. Road',1,8),
+('Kevin',5,'19XFA1F56BE004421',8787874555,'sdddd455@gmail.com','Market Road',7 ,15),
+('Rohit',2,'2MEFM74V87X658365',9879875654,'ughgdf33@gmail.com','S.G. Highway',1,8),
+('John',5,'4T1BD1FK7FU102405',7878956520,'gfydhg222@gmail.com','Hospital Road',3,8)
 
  
 
