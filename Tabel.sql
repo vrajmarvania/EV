@@ -69,6 +69,14 @@ Mode VARCHAR(20) CONSTRAINT PaymentMode_Mode_NotNull NOT NULL
 )
 
 
+
+create table State 
+(
+  StateID INT  CONSTRAINT  State_StateID_PkAuto PRIMARY KEY IDENTITY(1,1),
+  [Name] VARCHAR (50) CONSTRAINT State_Name_NotNull NOT NULL
+)
+
+
 INSERT INTO Customer VALUES
 ('Harsh','CCS-1','WBA3X5C51ED235114',9998885555,'abcs222@gmail.com','Virat Nagar','Banglore',2500),
 ('Jaydeep','CCS-2','5N3AA08A95N863813',8988956234,'csdv55@gmail.com','M.G. Road','Ahmedabad',10000),
