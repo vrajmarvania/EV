@@ -110,8 +110,6 @@ INSERT INTO  ChargingStation VALUES
 ('NOVA','Nikhil','CLUB ROAD',2,8),
 ('MG','Vikas','raiya road',4,8),
 ('TATA','Raj','university road',1,8)
- 
-
 
 INSERT INTO Port VALUES
 (1,260,5,1,8.4),
@@ -147,12 +145,19 @@ VALUES(1,'Virat',9824685963,22000),
     (5,'Ravi',8320046042,24000)
  
 
-INSERT INTO [Session] (CustomerID,PortID,StartTime,EndTime,AmountToPay,PaymentMode) VALUES
-(2,4,'08/01/2021 09:30','08/01/2021 10:30',100,'Credit Card'),
-(1,17,'08/01/2021 09:30','08/01/2021 10:30',90,'Cash'),
-(5,18,'08/12/2021 05:00','08/12/2021 06:00',75,'Credit Card'),
-(3,22,'08/14/2021 12:00','08/14/2021 13:30',110,'Account Vollet'),
-(4,14,'08/27/2021 07:30','08/27/2021 08:30',80,'Cash')
+INSERT INTO [Session] VALUES
+(2,4,'08/01/2021 09:30','08/01/2021 10:30',100,'P134987256LJS',1,'08/01/2021'),
+(1,17,'08/01/2021 09:30','08/01/2021 10:30',90,'P134987257LJS',2,'08/01/2021'),
+(5,18,'08/12/2021 05:00','08/12/2021 06:00',75,'P134987258LJS',1,'08/12/2021'),
+(3,22,'08/14/2021 12:00','08/14/2021 13:30',110,'P134987259LJS',4,'08/14/2021'),
+(4,14,'08/27/2021 07:30','08/27/2021 08:30',80,'P134987260LJS',5,'08/27/2021')
+
+INSERT INTO Feedback VALUES
+(2,3,5,'Fast charging and good facility'),
+(1,4,4,'Good management'),
+(5,2,4,'Good experience'),
+(3,2,5,'Clean campus,fast charge, good facility'),
+(4,5,3,'Good facility but management should be improve')
 
 INSERT INTO City VALUES
 ('Ahmedabad'),
