@@ -158,11 +158,11 @@ INSERT INTO Port VALUES
 (5,240,9,0,17.2)  
 
 INSERT INTO  Employees
-VALUES(1,'Virat',9824685963,22000),
-    (2,'Umesh',8564293846,20000),
-    (3,'Chirag',9654821563,25000),
-    (4,'Hardik',9265861573,23000),
-    (5,'Ravi',8320046042,24000)
+VALUES(1,'Virat',9824685963,'abd123@gmail.com',22000),
+    (2,'Umesh',8564293846,'jkl421@gmail.com',20000),
+    (3,'Chirag',9654821563,'okm852@gmail.com',25000),
+    (4,'Hardik',9265861573,'asd453@gmail.com',23000),
+    (5,'Ravi',8320046042,'pqr963@gmail.com',24000)
 
 INSERT INTO [Session] VALUES
 (2,4,'08/01/2021 09:30','08/01/2021 10:30',100,5.56,'P134987256LJS',1,'08/01/2021'),
