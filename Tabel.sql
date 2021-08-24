@@ -116,11 +116,11 @@ Comment VARCHAR(500)
 
 
 INSERT INTO Customer VALUES
-('Harsh',1,'WBA3X5C51ED235114',9998885555,'abcs222@gmail.com','Virat Nagar',12,12),
-('Jaydeep',2,'5N3AA08A95N863813',8988956234,'csdv55@gmail.com','M.G. Road',1,8),
-('Kevin',5,'19XFA1F56BE004421',8787874555,'sdddd455@gmail.com','Market Road',7 ,15),
-('Rohit',2,'2MEFM74V87X658365',9879875654,'ughgdf33@gmail.com','S.G. Highway',1,8),
-('John',5,'4T1BD1FK7FU102405',7878956520,'gfydhg222@gmail.com','Hospital Road',3,8)
+('Harsh','Kia','Sonet',1,'WBA3X5C51ED235114',9998885555,'abcs222@gmail.com','Virat Nagar',520068,12),
+('Jaydeep','Honada','City',2,'5N3AA08A95N863813',8988956234,'csdv55@gmail.com','M.G. Road',32008,1),
+('Kevin','Tata','Tigor',5,'19XFA1F56BE004421',8787874555,'sdddd455@gmail.com','Market Road',230532,7),
+('Rohit','Suzuki','Shwift',2,'2MEFM74V87X658365',9879875654,'ughgdf33@gmail.com','S.G. Highway',32008,1),
+('John','Renault','Kwid',5,'4T1BD1FK7FU102405',7878956520,'gfydhg222@gmail.com','Hospital Road',335009,3)
 
 
 INSERT INTO  ChargingStation VALUES
@@ -179,27 +179,26 @@ INSERT INTO Feedback VALUES
 (4,5,3,'Good facility but management should be improve')
 
 INSERT INTO City VALUES
-('Ahmedabad'),
-('Baroda'),
-('Surat'),
-('Rajkot'),
-('Jamnagar'),
-('Gandhinagar'),
-('Mumbai'),
-('New Delhi'),
-('Kalkata'),
-('Chennai'),
-('Pune'),
-('Bengaluru'),
-('Mysore'),
-('Bhopal'),
-('Indore'),
-('Amritsar'),
-('Jalandhar'),
-('Chandigarh'),
-('Jaypur'),
-('Jaisalmer'),
-('Jodhpur')
+('Ahmedabad',8),
+('Baroda',8),
+('Surat',8),
+('Rajkot',8),
+('Jamnagar',8),
+('Gandhinagar',8),
+('Mumbai',15),
+('Kalkata',28),
+('Chennai',25),
+('Pune',15),
+('Bengaluru',12),
+('Mysore',12),
+('Bhopal',14),
+('Indore',14),
+('Amritsar',21),
+('Jalandhar',21),
+('Chandigarh',21),
+('Jaypur',22),
+('Jaisalmer',22),
+('Jodhpur',22)
 
 INSERT INTO PaymentMode VALUES ('Credit Card'),('Debit Card'),('Net Banking'),('PayTM'),('UPI'),('Cash')
 
@@ -257,4 +256,12 @@ VALUES('Andhra Pradesh'),
               ('Retail Store'),
               ('Food Court'),
               ('Kids Activity Zone')
+
+	    INSERT INTO Status VALUES
+			('Public'),
+			('High power'),
+			('Restricted'),
+			('In use'),
+			('Under Repair')
+
     
