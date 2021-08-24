@@ -263,5 +263,3 @@ VALUES('Andhra Pradesh'),
 			('Restricted'),
 			('In use'),
 			('Under Repair')
-
-    
