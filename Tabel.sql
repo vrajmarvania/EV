@@ -246,4 +246,15 @@ VALUES('Andhra Pradesh'),
 		('AC TYPE-2'),
 		('AC0001'),
 		('AC PLUG POINT')
+
+		INSERT INTO  Aminities VALUES
+              ('Public Restroom'),
+              ('Cafeteria'),
+              ('Salon'),
+              ('Chemist Shop'),
+              ('Parking'),
+              ('Auto Service Center'),
+              ('Retail Store'),
+              ('Food Court'),
+              ('Kids Activity Zone')
     
