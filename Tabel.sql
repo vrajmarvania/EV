@@ -122,8 +122,6 @@ INSERT INTO Customer VALUES
 ('Rohit',2,'2MEFM74V87X658365',9879875654,'ughgdf33@gmail.com','S.G. Highway',1,8),
 ('John',5,'4T1BD1FK7FU102405',7878956520,'gfydhg222@gmail.com','Hospital Road',3,8)
 
- 
-
 
 INSERT INTO  ChargingStation VALUES
 ('KKV','ANIL','KKV ROAD',4,8),
