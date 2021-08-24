@@ -51,7 +51,7 @@ CREATE TABLE ChargingStation
 StationID INT CONSTRAINT ChargingStation_StationID_PkAuto PRIMARY KEY IDENTITY(1,1),
 StationName VARCHAR(50) CONSTRAINT ChargingStation_StationName_NotNull NOT NULL,
 [Owner] VARCHAR (50) CONSTRAINT ChargingStation_Owner_NotNull NOT NULL,
-StatusID INT CONSTRAINT ChargingStation_StatusID_FK_NotNull FOREIGN KEY REFERENCES Status(StatusID) ON DELETE NO ACTION ON UPDATE CASCADE,
+StatusID INT CONSTRAINT ChargingStation_StatusID_FK_NotNull FOREIGN KEY REFERENCES Status(StatusID) ON DELETE SET NULL ON UPDATE CASCADE,
 Timing VARCHAR(50) CONSTRAINT ChargingStation_Timing_NotNull NOT NULL,
 AminityList VARCHAR(50),
 [Address] VARCHAR (100) CONSTRAINT ChargingStation_Address_NotNull NOT NULL,
