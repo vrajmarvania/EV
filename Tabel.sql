@@ -1,3 +1,30 @@
+
+--1 1.Write a query to check available ports from all the stations.
+--2 2.Write a query to check availabel ports from stations located in gujarat.
+--3 3.Calculate duration of charging for all the vehical charged in station whose id is 4.
+--4 4.Calculate total salary paid in this month for all stations.
+--5 6.List all the customer from city ahmedabad.
+--6 8.List Customers whose connection type is ccs-2.
+--7 9.Waq to check available ports from station 'NOVA'.
+--8 11.Calculate charge amount for Rohit from used units. 
+--9 12.Count customers based on payment mode they have used.
+--10 15.Waq to check station availability in rajkot for CHAdeMO connection type.
+--11 16.Show the employee name,station name where he works the kevin was charged his vehical.
+--12 17.Show the customer who have charged from the satation located in the city where they are living.
+--13 18.Show customer name, station name, employee name of the station located in jamnagar.
+--14 19.Calculate the charges done by Jaydeep from the station 'TATA'.
+--15 20.List customer name who have charged on 20 august 2021.
+--16 21.Write a query to check available ports for ccs-2 connection from all the stations.
+--17 22.List customer name,City,Port,Station,Employee who have used credit card for payment.
+--18 List average rating of all the stations.
+--19 List all th estations who has rating less than 3.
+--20 List station who is open for '24/7'.
+--21 List the customers who have charged from station who has Parking facility.
+--22 List all the public stations with connection 'GB/T'.
+--23 List station from rajkot city who provides salon facility.
+--24 Set Connection type to the ccs-2 for all the car of kia company.
+
+
 CREATE TABLE State 
 (
 StateID INT  CONSTRAINT  State_StateID_PkAuto PRIMARY KEY IDENTITY(1,1),
@@ -39,7 +66,7 @@ CREATE TABLE Status
 StatusID INT CONSTRAINT Status_StatusID_PkAuto PRIMARY KEY IDENTITY(1,1),
 StatusName VARCHAR(30) CONSTRAINT Status_StatusName_NotNull NOT NULL
 )
-
+SELECT * FROM Status
 CREATE TABLE Aminities
 (
 AminityID INT CONSTRAINT Aminities_AminitiesID_PkAuto PRIMARY KEY IDENTITY(1,1),
@@ -53,15 +80,21 @@ StationName VARCHAR(50) CONSTRAINT ChargingStation_StationName_NotNull NOT NULL,
 [Owner] VARCHAR (50) CONSTRAINT ChargingStation_Owner_NotNull NOT NULL,
 StatusID INT CONSTRAINT ChargingStation_StatusID_FK_NotNull FOREIGN KEY REFERENCES Status(StatusID) ON DELETE SET NULL ON UPDATE CASCADE,
 Timing VARCHAR(50) CONSTRAINT ChargingStation_Timing_NotNull NOT NULL,
-AminityList VARCHAR(50),
 [Address] VARCHAR (100) CONSTRAINT ChargingStation_Address_NotNull NOT NULL,
 Longitude DECIMAL(10,6) CONSTRAINT ChargingStation_Longitude_NotNull NOT NULL,
 Latitude DECIMAL(10,6) CONSTRAINT ChargingStation_Latitude_NotNull NOT NULL,
 CityID INT CONSTRAINT ChargingStation_City_FK_NotNull NOT NULL FOREIGN KEY REFERENCES City(CityID) ON DELETE NO ACTION ON UPDATE NO ACTION
 )      
 
+CREATE TABLE StationHasAminity
+(
+StationHasAminityID INT CONSTRAINT StationHasAminity_StationHasAminityID_PkAuto PRIMARY KEY IDENTITY(1,1),
+StationId INT CONSTRAINT StationHasAminity_StationId_FkNotNull NOT NULL FOREIGN KEY REFERENCES ChargingStation(StationID) ON DELETE CASCADE ON UPDATE CASCADE,
+AminityID INT CONSTRAINT StationHasAminity_StatusID_FK_NotNull NOT NULL FOREIGN KEY REFERENCES Aminities(AminityID) ON DELETE CASCADE ON UPDATE CASCADE
+)
 
-        
+INSERT INTO StationHasAminity VALUES (1,1),(1,2),(1,4),(1,5),(1,7),(2,4),(2,3),(2,1),(3,7),(4,6),(5,2)
+
 CREATE TABLE Port   
 (
 PortID    INT CONSTRAINT Port_PortID_PkAuto PRIMARY KEY IDENTITY(1,1) ,
