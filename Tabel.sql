@@ -24,16 +24,7 @@ SELECT p.PortID,ct.Type,p.[Chargesper_kwh(Unit)],cs.StationName,cs.Timing,c.City
 --9 12.Count customers based on payment mode they have used.
 --10 15.Waq to check station availability in rajkot for CHAdeMO connection type.
 --11 16.Show the employee name,station name where he works the kevin was charged his vehical.
-
-SELECT c.Name AS CustomerName,cs.StationName,e.Name AS EmployeeName
-	FROM 
-		Session s JOIN Customer c  ON s.CustomerID=c.CustomerID
-		JOIN Port p ON s.PortID = p.PortID
-		JOIN ChargingStation cs ON cs.StationID=p.StationID
-		JOIN Employees e ON e.StationID=cs.StationID
-			WHERE c.Name = 'kevin'
-
---12 17.Show the customer who have charged from the satation located in the city where they are living.
+--12 17.Show the customer who have charged from the satation located in the city  'ahemdabad'.
 --13 18.Show customer name, station name, employee name of the station located in jamnagar.
 --14 19.Calculate the charges done by Jaydeep from the station 'TATA'.
 --15 20.List customer name who have charged on 27 august 2021.
@@ -201,11 +192,11 @@ INSERT INTO Customer VALUES
 
 
 INSERT INTO  ChargingStation VALUES
-('KKV','ANIL','2','6:00AM TO 9:30PM','2,3,4,5,6','KKV ROAD',22.293784, 70.784986,4),
-('C2','SHREYASH','2','24/7','RING ROAD','2,4,5,6,7,8',22.283909, 70.773710,3),
-('NOVA','Nikhil','3','7:00AM TO 9:00PM','2,3,4,1,5,','CLUB ROAD',22.340855, 70.915440,2),
-('MG','Vikas','1','24/7','raiya road','1,2,3,4,5',22.995020, 72.572489,4),
-('TATA','Raj','5','24/7','1,2,5,6,7,8','university road',22.995022, 72.972489,1)
+('KKV','ANIL','2','6:00AM TO 9:30PM','KKV ROAD',22.293784, 70.784986,4),
+('C2','SHREYASH','2','24/7','RING ROAD',22.283909, 70.773710,3),
+('NOVA','Nikhil','3','7:00AM TO 9:00PM','CLUB ROAD',22.340855, 70.915440,2),
+('MG','Vikas','1','24/7','raiya road',22.995020, 72.572489,4),
+('TATA','Raj','5','24/7','university road',22.995022, 72.972489,1)
 
 
 INSERT INTO Port VALUES
