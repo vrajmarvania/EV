@@ -102,6 +102,7 @@ Date DATETIME CONSTRAINT Expenditure_Date_def DEFAULT GETDATE() NOT NULL,
 IsDeleted BIT CONSTRAINT Expenditure_IsDeleted_def NOT NULL CHECK (IsDeleted IN (0,1)) DEFAULT 0
 )
 
+
 CREATE TABLE PaymentMode
 (
 ID INT CONSTRAINT PaymentMode_ID_Pk PRIMARY KEY IDENTITY(1,1),
@@ -319,3 +320,18 @@ VALUES('Andhra Pradesh'),
 INSERT INTO StationHasAminity(StationId,AminityID)
 VALUES 
 (1,1),(1,2),(1,4),(1,5),(1,7),(2,4),(2,3),(2,1),(3,7),(4,6),(5,2)
+
+INSERT INTO Expenditure (StationID,EnergyCharges,Maintainance)
+VALUES
+(1,10000,5000),
+(2,12000,8000),
+(3,10000,11000),
+(4,12000,5000),
+(5,11000,3000)
+
+INSERT INTO EmployeeWorksAt (EmployeeID,StationID,Salary) VALUES
+(1,3,25000),
+(2,4,25000),
+(3,5,25000),
+(4,1,25000),
+(5,2,25000)
