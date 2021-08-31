@@ -1,3 +1,6 @@
+CREATE DATABASE EVcharging
+
+USE EVCharging
 
 CREATE TABLE States 
 (
@@ -75,7 +78,6 @@ AminityID INT CONSTRAINT StationHasAminity_StatusID_FK_NotNull NOT NULL FOREIGN 
 IsDeleted BIT CONSTRAINT StationHasAminity_IsDeleted_Chk NOT NULL CHECK (IsDeleted IN (0,1)) DEFAULT 0
 )
 
-INSERT INTO StationHasAminity VALUES (1,1),(1,2),(1,4),(1,5),(1,7),(2,4),(2,3),(2,1),(3,7),(4,6),(5,2)
 
 CREATE TABLE ConnectionPort   
 (
@@ -144,7 +146,8 @@ IsDeleted BIT CONSTRAINT Feedback_IsDeleted_Chk NOT NULL CHECK (IsDeleted IN (0,
 
 
 
-INSERT INTO Customer VALUES
+INSERT INTO Customer(Name,Make,Model,ConnectionID,VehicalNo,PhoneNumber,EmailId,Address,Pincode,CityId)
+VALUES
 ('Harsh','Kia','Sonet',1,'WBA3X5C51ED235114',9998885555,'abcs222@gmail.com','Virat Nagar',520068,12),
 ('Jaydeep','Honada','City',2,'5N3AA08A95N863813',8988956234,'csdv55@gmail.com','M.G. Road',32008,1),
 ('Kevin','Tata','Tigor',5,'19XFA1F56BE004421',8787874555,'sdddd455@gmail.com','Market Road',230532,7),
@@ -152,15 +155,17 @@ INSERT INTO Customer VALUES
 ('John','Renault','Kwid',5,'4T1BD1FK7FU102405',7878956520,'gfydhg222@gmail.com','Hospital Road',335009,3)
 
 
-INSERT INTO  ChargingStation VALUES
-('KKV','ANIL','2','6:00AM TO 9:30PM','2,3,4,5,6','KKV ROAD',22.293784, 70.784986,4),
-('C2','SHREYASH','2','24/7','RING ROAD','2,4,5,6,7,8',22.283909, 70.773710,3),
-('NOVA','Nikhil','3','7:00AM TO 9:00PM','2,3,4,1,5,','CLUB ROAD',22.340855, 70.915440,2),
-('MG','Vikas','1','24/7','raiya road','1,2,3,4,5',22.995020, 72.572489,4),
-('TATA','Raj','5','24/7','1,2,5,6,7,8','university road',22.995022, 72.972489,1)
+INSERT INTO  ChargingStation(StationName,Owner,StatusID,Timing,Address,Longitude,Latitude,CityID)
+VALUES
+('KKV','ANIL','2','6:00AM TO 9:30PM','KKV ROAD',22.293784, 70.784986,4),
+('C2','SHREYASH','2','24/7','RING ROAD',22.283909, 70.773710,3),
+('NOVA','Nikhil','3','7:00AM TO 9:00PM','CLUB ROAD',22.340855, 70.915440,2),
+('MG','Vikas','1','24/7','raiya road',22.995020, 72.572489,4),
+('TATA','Raj','5','24/7','university road',22.995022, 72.972489,1)
 
 
-INSERT INTO ConnectionPort VALUES
+INSERT INTO ConnectionPort(StationId,Port_Voltage,ConnectionID,Availability,ChargesPerKWH) 
+VALUES
 (1,260,5,1,18.4),
 (1,260,5,1,18.4),
 (1,260,5,1,18.4),
@@ -186,34 +191,35 @@ INSERT INTO ConnectionPort VALUES
 (5,260,5,0,18.4),
 (5,240,9,0,17.2)  
 
-INSERT INTO  Employees
-VALUES(1,'Virat',9824685963,'abd123@gmail.com',22000),
-    (2,'Umesh',8564293846,'jkl421@gmail.com',20000),
-    (3,'Chirag',9654821563,'okm852@gmail.com',25000),
-    (4,'Hardik',9265861573,'asd453@gmail.com',23000),
-    (5,'Ravi',8320046042,'pqr963@gmail.com',24000)
+INSERT INTO  Employees(Name,PhoneNumber,EmailId)
+VALUES
+	('Virat',9824685963,'abd123@gmail.com'),
+    ('Umesh',8564293846,'jkl421@gmail.com'),
+    ('Chirag',9654821563,'okm852@gmail.com'),
+    ('Hardik',9265861573,'asd453@gmail.com'),
+    ('Ravi',8320046042,'pqr963@gmail.com')
 
-INSERT INTO SessionRecord VALUES
+INSERT INTO SessionRecord (CustomerID,PortID,StartTime,EndTime,Amount,Units,PaymentID,PaymentMode,Date)
+VALUES
 (2,4,'08/01/2021 09:30','08/01/2021 10:30',100,5.56,'P134987256LJS',1,'08/01/2021'),
-(6,17,'08/01/2021 09:30','08/01/2021 10:30',90,5,'P134987257LJS',2,'08/01/2021'),
 (5,18,'08/12/2021 05:00','08/12/2021 06:00',75,4.1,'P134987258LJS',1,'08/12/2021'),
 (3,22,'08/14/2021 12:00','08/14/2021 13:30',110,6.1,'P134987259LJS',4,'08/14/2021'),
 (4,14,'08/27/2021 07:30','08/27/2021 08:30',80,4.48,'P134987260LJS',5,'08/27/2021'),
 (4,4,'09/27/2021 07:45','09/27/2021 09:30',80,4.48,'P134987261LJS',5,'09/27/2021'),
 (3,17,'09/14/2021 12:00','09/14/2021 13:45',110,6.1,'P134987262LJS',4,'09/14/2021'),
 (5,12,'09/12/2021 05:50','09/12/2021 06:20',75,4.1,'P134987263LJS',1,'09/12/2021'),
-(6,22,'09/01/2021 09:30','09/01/2021 10:30',90,5,'P134987263LJS',2,'09/01/2021'),
 (2,6,'09/01/2021 011:30','09/01/2021 12:45',100,5.56,'P134987264LJS',1,'09/01/2021')
 
 
-INSERT INTO Feedback VALUES
+INSERT INTO Feedback(CustomerID,StationId,Rating,Comment)
+VALUES
 (2,3,5,'Fast charging and good facility'),
-(6,4,4,'Good management'),
 (5,2,4,'Good experience'),
 (3,2,5,'Clean campus,fast charge, good facility'),
 (4,5,3,'Good facility but management should be improve')
 
-INSERT INTO City VALUES
+INSERT INTO City(CityName,StateID)
+VALUES
 ('Ahmedabad',8),
 ('Baroda',8),
 ('Surat',8),
@@ -235,10 +241,10 @@ INSERT INTO City VALUES
 ('Jaisalmer',22),
 ('Jodhpur',22)
 
-INSERT INTO PaymentMode VALUES ('Credit Card'),('Debit Card'),('Net Banking'),('PayTM'),('UPI'),('Cash')
+INSERT INTO PaymentMode(Mode) VALUES ('Credit Card'),('Debit Card'),('Net Banking'),('PayTM'),('UPI'),('Cash')
 
 
-INSERT INTO  States
+INSERT INTO  States(Name)
 VALUES('Andhra Pradesh'),
       ('Arunachal Pradesh'),
 	  ('Assam'),
@@ -269,7 +275,7 @@ VALUES('Andhra Pradesh'),
 	  ('West Bengal')
 	  
 	  
-	  INSERT INTO ConnectionType VALUES
+	  INSERT INTO ConnectionType(Type) VALUES
 		('CCS-1'),
 		('CCS-2'),
 		('BG/T'),
@@ -281,7 +287,8 @@ VALUES('Andhra Pradesh'),
 		('AC0001'),
 		('AC PLUG POINT')
 
-		INSERT INTO  Aminities VALUES
+		INSERT INTO  Aminities(AminityName)
+			VALUES
               ('Public Restroom'),
               ('Cafeteria'),
               ('Salon'),
@@ -292,9 +299,13 @@ VALUES('Andhra Pradesh'),
               ('Food Court'),
               ('Kids Activity Zone')
 
-	    INSERT INTO StationStatus VALUES
+	    INSERT INTO StationStatus(StatusName) VALUES
 			('Public'),
 			('High power'),
 			('Restricted'),
 			('In use'),
 			('Under Repair')
+
+INSERT INTO StationHasAminity(StationId,AminityID)
+VALUES 
+(1,1),(1,2),(1,4),(1,5),(1,7),(2,4),(2,3),(2,1),(3,7),(4,6),(5,2)
