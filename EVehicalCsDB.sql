@@ -90,7 +90,17 @@ ChargesPerKWH SMALLMONEY  CONSTRAINT ConnectionPort_ChargesPerKWH_NotNull NOT NU
 IsDeleted BIT CONSTRAINT ConnectionPort_IsDeleted_Chk NOT NULL CHECK (IsDeleted IN (0,1)) DEFAULT 0
 )
 
-Expenditure   id,stationid,maintance,energycharges,
+--Expenditure   id,stationid,maintance,energycharges,
+
+CREATE TABLE Expenditure
+(
+ExpID INT CONSTRAINT Expenditure_ExpID_Pk PRIMARY KEY IDENTITY(1,1),
+StationID INT CONSTRAINT Expenditure_StationID_Fk FOREIGN KEY REFERENCES ChargingStation(StationID) ON DELETE NO ACTION ON UPDATE NO ACTION NOT NULL,
+EnergyCharges MONEY CONSTRAINT Expenditure_EnergyCharges_NotNull NOT NULL,
+Maintainance MONEY CONSTRAINT Expenditure_Maintainance_NotNull NOT NULL,
+Date DATETIME CONSTRAINT Expenditure_Date_def DEFAULT GETDATE() NOT NULL,
+IsDeleted BIT CONSTRAINT Expenditure_IsDeleted_def NOT NULL CHECK (IsDeleted IN (0,1)) DEFAULT 0
+)
 
 CREATE TABLE PaymentMode
 (
